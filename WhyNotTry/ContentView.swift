@@ -13,6 +13,7 @@ struct ContentView: View {
   let defaultActivity = "Volleyball"
   
   let colors: [Color] = [.blue, .cyan, .gray, .green, .indigo, .mint, .orange, .pink, .purple, .red]
+  
   @State private var selected = "Volleyball"
   @State private var bgColor = Color.blue
   
@@ -37,8 +38,10 @@ struct ContentView: View {
     Spacer()
     
     Button("Refresh") {
+      withAnimation {
         selected = activities.randomElement() ?? defaultActivity
         bgColor = colors.randomElement() ?? Color.blue
+      }
     }
     .buttonStyle(.borderedProminent)
   }
