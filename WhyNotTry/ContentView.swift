@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
-  var activities = ["Archery", "Baseball", "Basketball", "Bowling", "Volleyball"]
+  let activities = ["Archery", "Baseball", "Basketball", "Bowling", "Boxing", "Cricket", "Curling", "Fencing", "Golf", "Hiking", "Lacrosse", "Rugby", "Squash", "Volleyball", "Badminton", "Climbing", "Hockey", "Kickboxing", "Pickleball", "Skating", "Taichi", "Yoga"]
   
   let defaultActivity = "Volleyball"
   
-  @State var selected = "Volleyball"
+  @State private var selected = "Volleyball"
   
   var body: some View {
+    Spacer()
+    
     Text("Why not try...")
       .font(.largeTitle.bold())
     
@@ -29,6 +31,8 @@ struct ContentView: View {
     
     Text("\(selected)!")
       .font(.title)
+    
+    Spacer()
     
     Button("Refresh") {
       selected = activities.randomElement() ?? defaultActivity
