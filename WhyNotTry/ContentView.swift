@@ -10,7 +10,9 @@ import SwiftUI
 struct ContentView: View {
   var activities = ["Archery", "Baseball", "Basketball", "Bowling", "Volleyball"]
   
-  var selected = "Volleyball"
+  let defaultActivity = "Volleyball"
+  
+  @State var selected = "Volleyball"
   
   var body: some View {
     Text("Why not try...")
@@ -27,6 +29,11 @@ struct ContentView: View {
     
     Text("\(selected)!")
       .font(.title)
+    
+    Button("Refresh") {
+      selected = activities.randomElement() ?? defaultActivity
+    }
+    .buttonStyle(.borderedProminent)
   }
 }
 
