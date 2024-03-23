@@ -8,23 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Circle()
-                .fill(.blue)
-                .padding()
-                .overlay(
-                    Image(systemName: "figure.archery")
-                        .font(.system(size: 144))
-                        .foregroundColor(.white)
-                )
-            
-            Text("Archery!")
-                .font(.title)
-        }
-    }
+  var activities = ["Archery", "Baseball", "Basketball", "Bowling", "Volleyball"]
+  
+  var selected = "Volleyball"
+  
+  var body: some View {
+    Text("Why not try...")
+      .font(.largeTitle.bold())
+    
+    Circle()
+      .fill(.blue)
+      .padding()
+      .overlay(
+        Image(systemName: "figure.\(selected.lowercased())")
+          .font(.system(size: 144))
+          .foregroundColor(.white)
+      )
+    
+    Text("\(selected)!")
+      .font(.title)
+  }
 }
 
 #Preview {
-    ContentView()
+  ContentView()
 }
