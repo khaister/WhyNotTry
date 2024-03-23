@@ -9,14 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
   let activities = [
-    "Archery", "Baseball", "Basketball", "Bowling", "Boxing", "Cricket", "Curling", "Fencing", "Golf",
-    "Hiking", "Lacrosse", "Rugby", "Squash", "Volleyball", "Badminton", "Climbing", "Hockey",
-    "Kickboxing", "Pickleball", "Skating", "Taichi", "Yoga"
+    "Archery", "Baseball", "Basketball", "Bowling", "Boxing", "Cricket", "Curling", "Fencing",
+    "Golf", "Hiking", "Lacrosse", "Rugby", "Squash", "Volleyball", "Badminton", "Climbing",
+    "Hockey", "Kickboxing", "Pickleball", "Skating", "Taichi", "Yoga",
   ]
 
   let defaultActivity = "Volleyball"
 
-  let colors: [Color] = [.blue, .cyan, .gray, .green, .indigo, .mint, .orange, .pink, .purple, .red]
+  let colors: [Color] = [
+    .blue, .cyan, .gray, .green, .indigo, .mint, .orange, .pink, .purple, .red,
+  ]
 
   @State private var selectedActivity = "Volleyball"
   @State private var activityColor = Color.blue
@@ -38,8 +40,8 @@ struct ContentView: View {
             .foregroundColor(.white)
         )
 
-      Text("**\(selectedActivity)**").font(.title).foregroundColor(activityColor) + Text(" _!!_")
-        .font(.title)
+      Text("**\(selectedActivity)**").font(.title).foregroundColor(activityColor)
+        + Text(" _!!_").font(.title)
     }
     .transition(.slide)
     .id(activityId)
@@ -57,6 +59,6 @@ struct ContentView: View {
   }
 }
 
-#Preview {
+#Preview{
   ContentView()
 }
