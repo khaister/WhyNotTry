@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -38,7 +38,9 @@
 				EE09AC462BAE683F00F7D0B6 /* WhyNotTry */,
 				EE09AC452BAE683F00F7D0B6 /* Products */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		EE09AC452BAE683F00F7D0B6 /* Products */ = {
 			isa = PBXGroup;
@@ -77,6 +79,7 @@
 				EE09AC402BAE683F00F7D0B6 /* Sources */,
 				EE09AC412BAE683F00F7D0B6 /* Frameworks */,
 				EE09AC422BAE683F00F7D0B6 /* Resources */,
+				EEE1A97E2BAE6CE50053ED3B /* Lint */,
 			);
 			buildRules = (
 			);
@@ -103,7 +106,7 @@
 				};
 			};
 			buildConfigurationList = EE09AC3F2BAE683F00F7D0B6 /* Build configuration list for PBXProject "WhyNotTry" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 15.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -131,6 +134,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EEE1A97E2BAE6CE50053ED3B /* Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Lint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint > /dev/null; then\n    swiftlint\nelse\n    echo \"⚠️ warning: SwiftLint not found\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EE09AC402BAE683F00F7D0B6 /* Sources */ = {
