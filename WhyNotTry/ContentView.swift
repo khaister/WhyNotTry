@@ -12,7 +12,9 @@ struct ContentView: View {
   
   let defaultActivity = "Volleyball"
   
+  let colors: [Color] = [.blue, .cyan, .gray, .green, .indigo, .mint, .orange, .pink, .purple, .red]
   @State private var selected = "Volleyball"
+  @State private var bgColor = Color.blue
   
   var body: some View {
     Spacer()
@@ -21,7 +23,7 @@ struct ContentView: View {
       .font(.largeTitle.bold())
     
     Circle()
-      .fill(.blue)
+      .fill(bgColor)
       .padding()
       .overlay(
         Image(systemName: "figure.\(selected.lowercased())")
@@ -35,7 +37,8 @@ struct ContentView: View {
     Spacer()
     
     Button("Refresh") {
-      selected = activities.randomElement() ?? defaultActivity
+        selected = activities.randomElement() ?? defaultActivity
+        bgColor = colors.randomElement() ?? Color.blue
     }
     .buttonStyle(.borderedProminent)
   }
